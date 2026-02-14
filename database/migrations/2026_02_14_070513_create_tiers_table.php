@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('tiers', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->json('features')->nullable();
+            $table->string('description')->nullable();
+            $table->float('price')->default(0);
+            $table->unsignedInteger('quota')->default(0);
+            $table->boolean('active')->default(false);
             $table->timestamps();
         });
     }
