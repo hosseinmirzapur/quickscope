@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('wallets', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->float('balance')->default(0);
+            $table->string('name');
+            $table->string('address');
+            $table->string('type'); // custodial or personal
+            $table->boolean('is_whitelisted')->default(false);
             $table->timestamps();
         });
     }
