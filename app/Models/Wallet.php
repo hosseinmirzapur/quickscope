@@ -12,9 +12,6 @@ class Wallet extends Model
     /** @use HasFactory<WalletFactory> */
     use HasFactory;
 
-    /**
-     * @return BelongsTo
-     */
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

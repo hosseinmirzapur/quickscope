@@ -13,12 +13,11 @@ class Payment extends Model
     use HasFactory;
 
     const string STATUS_PENDING = 'pending';
+
     const string STATUS_PAID = 'paid';
+
     const string STATUS_CANCELLED = 'cancelled';
 
-    /**
-     * @return BelongsTo
-     */
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
